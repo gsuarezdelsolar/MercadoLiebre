@@ -3,10 +3,17 @@ const app = express();
 
 app.use(express.static('public'));
 
-app.listen(process.env.PORT || 3000, function() { // 3000 o el puerto que usen
+app.listen(process.env.PORT || 3000, function() { 
     console.log("Servidor corriendo");
 })
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname+ '/views/home.html')
 })
+app.get('/registro', (req, res) => {
+    res.sendFile(__dirname+ '/views/registro.html');
+})
+app.get('/login', (req, res) => {
+    res.sendFile(__dirname+ '/views/login.html');
+})
+
